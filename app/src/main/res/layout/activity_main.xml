@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.marcos.mygridlayoutexample.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/gridLayout"
+        android:columnCount="3"
+        android:layout_height="231dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="presionado"
+            android:padding="0dp"
+            app:srcCompat="@drawable/celda" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="210dp"
+        android:layout_height="231dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="264dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButtonUno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="numeroPresionado"
+            app:srcCompat="@drawable/vector_uno" />
+
+        <ImageButton
+            android:id="@+id/imageButtonDos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:onClick="numeroPresionado"
+            app:srcCompat="@drawable/vector_dos" />
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>
