@@ -5,9 +5,9 @@ package com.example.marcos.mygridlayoutexample;
  */
 
 public class MyDibujadorCeldas implements IGrid{
-    private DibujadorCelda dibujadorCelda;
-    private int columnCount;
-    private int rowCount;
+    protected DibujadorCelda dibujadorCelda;
+    protected int columnCount;
+    protected int rowCount;
 
     public MyDibujadorCeldas(DibujadorCelda dibujadorCelda){
         this.dibujadorCelda=dibujadorCelda;

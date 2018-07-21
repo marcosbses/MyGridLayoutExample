@@ -27,7 +27,7 @@ public class CeldasDibujadas {
     }
 
     private void clear(){
-        Log.i("infor","undo()");
+        Log.i("infor","clear()");
         dibujadorCeldas.dibujarCruz(ipr,jpr);
         matriz=new int[dibujadorCeldas.getColumnCount()][dibujadorCeldas.getRowCount()];
     }
@@ -36,6 +36,7 @@ public class CeldasDibujadas {
         if(matriz[ipr][jpr]==1){
             clear();
         }else{
+            Log.i("infor","not clear");
             dibujadorCeldas2.dibujarCruz(ipr,jpr);
 
         }

@@ -23,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
         SingleMainGridLayoutContainer.setGridLayout(gridLayout);
         MyDibujadorCelda myDibujadorCelda=new MyDibujadorCelda(getApplicationContext(),gridLayout);
         MyDibujadorCelda2 myDibujadorCelda2=new MyDibujadorCelda2(getApplicationContext(),gridLayout);
+        MyDibujadorCelda3 myDibujadorCelda3=new MyDibujadorCelda3(getApplicationContext(),gridLayout);
         int rowCount=myDibujadorCelda.getRowCount();
         Log.i("infor","count:"+rowCount);
 
 
         //make mydibujadosCeldas
-        MyDibujadorCeldas myDibujadorCeldas=new MyDibujadorCeldas(myDibujadorCelda);
+        MyDibujadorCeldas myDibujadorCeldas=new MyDibujadorCeldasWAltColors(myDibujadorCelda3,myDibujadorCelda);
         MyDibujadorCeldas myDibujadorCeldas2=new MyDibujadorCeldas(myDibujadorCelda2);
 
         //myDibujadorCeldas.dibujarCruz(2,2);
