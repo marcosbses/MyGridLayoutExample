@@ -13,9 +13,11 @@ public class ValuableSelector implements IValuable,ISelectable {
     private List<? extends IValuable> valuables;
     private IValuable valuable;
     private int position;
+    private ValueChangeEvaluator valueChangeEvaluator;
     private static ValuableSelector valuableSelector;
-    private ValuableSelector(List<? extends IValuable> valuables){
+    private ValuableSelector(List<? extends IValuable> valuables,ValueChangeEvaluator valueChangeEvaluator){
         this.valuables=valuables;
+        this.valueChangeEvaluator=valueChangeEvaluator;
         valuable=null;
     }
 
@@ -24,7 +26,7 @@ public class ValuableSelector implements IValuable,ISelectable {
             Log.i("infor","valuableSelector nulo-> instanciando");
             GridLayoutAdapter gridLayoutAdapter=GridLayoutAdapter.getInstance();
             List<? extends IValuable> imageButtons= gridLayoutAdapter.getImageButtonAdapterList();
-            valuableSelector=new ValuableSelector(imageButtons);
+            valuableSelector=new ValuableSelector(imageButtons,ValueChangeEvaluator.getInstance());
         }
         return valuableSelector;
     }
@@ -42,6 +44,7 @@ public class ValuableSelector implements IValuable,ISelectable {
     @Override
     public void select(int position) {
         Log.i("infor","position selected:"+position);
+        valueChangeEvaluator.select(position);
         valuable=valuables.get(position);
         this.position=position;
     }
