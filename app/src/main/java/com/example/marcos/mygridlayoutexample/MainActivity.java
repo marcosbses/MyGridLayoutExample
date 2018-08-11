@@ -2,10 +2,12 @@ package com.example.marcos.mygridlayoutexample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SingleContextContainer.setContext(getApplicationContext());
+        SingleContextContainer.setContext(this);
         //make mydibujadorcelda
         GridLayout gridLayout=(GridLayout)findViewById(R.id.gridLayout);
         SingleMainGridLayoutContainer.setGridLayout(gridLayout);
@@ -27,6 +29,17 @@ public class MainActivity extends AppCompatActivity {
         int rowCount=myDibujadorCelda.getRowCount();
         Log.i("infor","count:"+rowCount);
 
+
+        DisplayMetrics displayMetrics=getResources().getDisplayMetrics();
+        int width=displayMetrics.widthPixels;
+        //cambio tamano celdas
+        for(int i=0;i<gridLayout.getChildCount();i++){
+            ImageButton gridChild=(ImageButton) gridLayout.getChildAt(i);
+            ViewGroup.LayoutParams layoutParams=gridChild.getLayoutParams();
+
+            layoutParams.width=(int)(width/9);
+            gridChild.setLayoutParams(layoutParams);
+        }
 
         //make mydibujadosCeldas
         MyDibujadorCeldas myDibujadorCeldas=new MyDibujadorCeldasWAltColors(myDibujadorCelda3,myDibujadorCelda);
@@ -65,5 +78,32 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"no se puede poner valor 2",Toast.LENGTH_LONG).show();
             }
         }
+        if(v.getId()==R.id.imageButtonTres){
+            Log.i("infor","imageButtonUno pressed");
+            if(valueChangeEvaluator.evaluateChange(3)){
+                valuable.setValues(3);
+            }else{
+                Toast.makeText(getApplicationContext(),"no se puede poner valor 3",Toast.LENGTH_LONG).show();
+            }
+        }
+        if(v.getId()==R.id.imageButtonCuatro){
+            Log.i("infor","imageButtonUno pressed");
+            if(valueChangeEvaluator.evaluateChange(4)){
+                valuable.setValues(4);
+            }else{
+                Toast.makeText(getApplicationContext(),"no se puede poner valor 4",Toast.LENGTH_LONG).show();
+            }
+        }
+
+        if(v.getId()==R.id.imageButtonVacio){
+            Log.i("infor","imageButtonVacio pressed");
+            IValuableStack valuableStack=HistoricValuableStack.getInstance();
+            IValuable valuable2=valuableStack.remove();
+            if(valuable2!=null){
+                valuable2.setValues(-1);
+            }
+
+        }
+
     }
 }

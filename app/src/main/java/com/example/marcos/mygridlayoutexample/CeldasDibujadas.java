@@ -1,8 +1,14 @@
 package com.example.marcos.mygridlayoutexample;
 
+import android.app.Activity;
+import android.app.Application;
+import android.content.ContentProvider;
 import android.content.Context;
 import android.util.Log;
+import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.Arrays;
 
@@ -15,6 +21,8 @@ public class CeldasDibujadas {
     private MyDibujadorCeldas dibujadorCeldas2;
     private int[][] matriz;
     private ISelectable selectable;
+    private GridLayoutAdapter gridLayoutAdapter;
+    private ImageButtonAdapter lastCentralImageButtonAdapter;
     private int ipr=0;
     private int jpr=0;
 
@@ -24,38 +32,34 @@ public class CeldasDibujadas {
         matriz=MatrizContainer.getMatriz();//matriz 3x3
         GridLayoutAdapter gridLayoutAdapter=GridLayoutAdapter.getInstance();
         selectable=ValuableSelector.getInstance();
+        this.gridLayoutAdapter=GridLayoutAdapter.getInstance();
     }
 
-    private void clear(){
-        Log.i("infor","clear()");
-        dibujadorCeldas.dibujarCruz(ipr,jpr);
-        matriz=new int[dibujadorCeldas.getColumnCount()][dibujadorCeldas.getRowCount()];
-    }
 
     private void undo(){
-        if(matriz[ipr][jpr]==1){
-            clear();
-        }else{
-            Log.i("infor","not clear");
-            dibujadorCeldas2.dibujarCruz(ipr,jpr);
+        dibujadorCeldas.dibujarCruz(ipr,jpr);
 
-        }
     }
 
 
     public void dibujarCruz(int i, int j) {
-        if(matriz[i][j]==1){
-            undo();
-            matriz[i][j]=0;
-        }else{
-            clear();
-            dibujadorCeldas2.dibujarCruz(i,j);
-            matriz[i][j]=1;
-
+        if(this.lastCentralImageButtonAdapter!=null){
+            lastCentralImageButtonAdapter.pop();
         }
+        undo();
+        dibujadorCeldas2.dibujarCruz(i,j);
+
 
         ipr=i;
         jpr=j;
         selectable.select(dibujadorCeldas.getColumnCount()*i+j);
+        //
+        ImageButtonAdapter imageButtonAdapter=gridLayoutAdapter.getImageButtonAdapter(i*9+j);
+        if(imageButtonAdapter!=lastCentralImageButtonAdapter){
+            imageButtonAdapter.popUp();
+        }
+        lastCentralImageButtonAdapter=imageButtonAdapter;
+
+
     }
 }

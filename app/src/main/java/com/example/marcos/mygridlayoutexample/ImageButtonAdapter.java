@@ -1,36 +1,46 @@
 package com.example.marcos.mygridlayoutexample;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ValueAnimator;
+
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.os.Build;
-import android.provider.ContactsContract;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 /**
  * Created by marcos on 2/9/18.
  */
 
-public class ImageButtonAdapter implements IDrawableContainer,IValuable {
+public class ImageButtonAdapter implements IDrawableContainer,IValuable,ISquare {
     private ImageButton imageButton;
     private int value;
     private Drawable valueDrawable;
     private Drawable fondoDrawable;
     private Context context;
     private int fondoDrawableNumber;
+    private ImageView popUpView;
     public ImageButtonAdapter(ImageButton imageButton, Context context){
         this.imageButton=imageButton;
         this.value=-1;
         this.context=context;
         this.valueDrawable=null;
         this.fondoDrawableNumber=0;
+        popUpView=new ImageView(SingleContextContainer.getContext());
+        popUpView.setBackground(context.getDrawable(R.drawable.celda10));
+        Activity activity=(Activity)SingleContextContainer.getContext();
+        //activity.addContentView(popUpView,new ViewGroup.LayoutParams(300,300));
+
+        ViewGroup viewGroup=(ViewGroup)(activity.findViewById(R.id.frameLayout));
+        viewGroup.addView(popUpView,new ViewGroup.LayoutParams(300,300));
+
+
+        popUpView.setVisibility(View.INVISIBLE);
+
     }
 
     @Override
@@ -38,9 +48,11 @@ public class ImageButtonAdapter implements IDrawableContainer,IValuable {
         this.fondoDrawable=fondoDrawable;
         if(valueDrawable!=null){
             Drawable[] drawables={fondoDrawable,valueDrawable};
-            imageButton.setImageDrawable(new LayerDrawable(drawables));
+            //imageButton.setImageDrawable(new LayerDrawable(drawables));
+            imageButton.setBackground(new LayerDrawable(drawables));
         }else{
-            imageButton.setImageDrawable(fondoDrawable);
+            //imageButton.setImageDrawable(fondoDrawable);
+            imageButton.setBackground(fondoDrawable);
         }
         if(fondoDrawableNumber==0){
             fondoDrawableNumber=1;
@@ -53,72 +65,56 @@ public class ImageButtonAdapter implements IDrawableContainer,IValuable {
         Log.i("infor","in ImageButtonAdapter set values(value)");
         LayerDrawable layerDrawable=getLayerDrawable();
         setValue(value);
+
         if(value==1){
             valueDrawable=context.getDrawable(R.drawable.vector_uno);
         }
         if(value==2){
             valueDrawable=context.getDrawable(R.drawable.vector_dos);
         }
+        if(value==3){
+            valueDrawable=context.getDrawable(R.drawable.vector_tres);
+        }
+        if(value==4){
+            valueDrawable=context.getDrawable(R.drawable.vector_cuatro);
+        }
+        if(value==-1){
+            valueDrawable=context.getDrawable(R.drawable.vector_vacio);
+        }
 
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Drawable popupDrawable=popUpView.getBackground();
+            try{
+                LayerDrawable popupLayerDrawable=(LayerDrawable)popupDrawable;
+                Drawable[] drawables={popupLayerDrawable.getDrawable(0),valueDrawable};
+                popUpView.setBackground(new LayerDrawable(drawables));
+            }catch (ClassCastException e){
+                Drawable[] drawables={popupDrawable,valueDrawable};
+                popUpView.setBackground(new LayerDrawable(drawables));
+            }
+
+
 
                 if(layerDrawable==null){
                     Log.i("infor","ld is null");
                     Drawable[] drawables={fondoDrawable,valueDrawable};
-                    final Drawable newDrawable=new LayerDrawable(drawables);
-                    final int startFondoDrawableNumber=this.fondoDrawableNumber;
 
-                    final Bitmap backBitmap=Bitmap.createBitmap(imageButton.getDrawable().getIntrinsicWidth(), imageButton.getDrawable().getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-                    final Bitmap forBitmap=Bitmap.createBitmap(imageButton.getDrawable().getIntrinsicWidth(), imageButton.getDrawable().getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-                    Canvas canvas1=new Canvas(backBitmap);
-                    Canvas canvas2=new Canvas(forBitmap);
+                    Activity activity=(Activity)SingleContextContainer.getContext();
 
-                    imageButton.getDrawable().setBounds(0, 0, canvas1.getWidth(), canvas1.getHeight());
-                    imageButton.getDrawable().draw(canvas1);
-                    newDrawable.setBounds(0, 0, canvas1.getWidth(), canvas1.getHeight());
-                    newDrawable.draw(canvas2);
+                    imageButton.setBackground(new LayerDrawable(drawables));
 
-                    final BitmapCombiner bitmapCombiner=new BitmapCombiner(backBitmap,forBitmap);
 
-                    ValueAnimator valueAnimator=ValueAnimator.ofInt(0,100);
-                    valueAnimator.setDuration(1000);
-                    valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                        private int lastValue=-1;
-                        @Override
-                        public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            if(lastValue!=(int)valueAnimator.getAnimatedValue()&&((int)valueAnimator.getAnimatedValue())%5==0){
-                                lastValue=(int)valueAnimator.getAnimatedValue();
-                                Bitmap bitmap=bitmapCombiner.getCombinedBitmap(lastValue);
 
-                                imageButton.setImageBitmap(bitmap);
-                            }
 
-                        }
-                    });
-                    valueAnimator.addListener(new AnimatorListenerAdapter() {
-                        @Override
-                        public void onAnimationEnd(Animator animation) {
-                            imageButton.setImageDrawable(newDrawable);
-                            if(startFondoDrawableNumber!=ImageButtonAdapter.this.fondoDrawableNumber){
-                                Log.i("infor","fondo changed in animation");
-                                if(valueDrawable!=null){
-                                    Drawable[] drawables={fondoDrawable,valueDrawable};
-                                    imageButton.setImageDrawable(new LayerDrawable(drawables));
-                                }else{
-                                    imageButton.setImageDrawable(fondoDrawable);
-                                }
-                            }
-                            super.onAnimationEnd(animation);
 
-                        }
-                    });
-                    valueAnimator.start();
+
                 }else{
                     Log.i("infor","ld is not null");
                     Drawable fondoDrawable=layerDrawable.getDrawable(0);
                     Drawable[] drawables={fondoDrawable,valueDrawable};
-                    imageButton.setImageDrawable(new LayerDrawable(drawables));
+                    //imageButton.setImageDrawable(new LayerDrawable(drawables));
+                    imageButton.setBackground(new LayerDrawable(drawables));
                 }
             }
 
@@ -141,5 +137,40 @@ public class ImageButtonAdapter implements IDrawableContainer,IValuable {
 
         }
         return layerDrawable;
+    }
+
+    @Override
+    public int getDimension() {
+        return imageButton.getWidth();
+    }
+
+    @Override
+    public void setDimension(int dimension) {
+        ViewGroup.LayoutParams params=imageButton.getLayoutParams();
+        params.width=dimension;
+        params.height=dimension;
+        imageButton.setLayoutParams(params);
+    }
+
+    private int leftPopUpMargin(){
+        int lefM=imageButton.getLeft();
+        lefM=lefM+(int)(imageButton.getWidth()/2);
+        int popupWidth=popUpView.getWidth();
+        lefM=lefM-(int)(popupWidth/2);
+        return lefM;
+    }
+
+    public void popUp(){
+        Log.i("infor","top: "+imageButton.getTop());
+        popUpView.setY(imageButton.getTop());
+        ViewGroup.MarginLayoutParams marginLayoutParams=(ViewGroup.MarginLayoutParams) popUpView.getLayoutParams();
+        marginLayoutParams.leftMargin=leftPopUpMargin();
+        popUpView.setLayoutParams(marginLayoutParams);
+
+        this.setValues(value);
+        popUpView.setVisibility(View.VISIBLE);
+    }
+    public void pop(){
+        popUpView.setVisibility(View.INVISIBLE);
     }
 }

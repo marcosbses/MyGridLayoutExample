@@ -13,7 +13,7 @@ import java.util.List;
  * Created by marcos on 2/9/18.
  */
 
-public class GridLayoutAdapter implements IDrawableContainerParent,IValuableParent {
+public class GridLayoutAdapter implements IDrawableContainerParent,IValuableParent,IGrid {
     private GridLayout gridLayout;
     private List<ImageButtonAdapter> imageButtonAdapterList;
     private static GridLayoutAdapter gridLayoutAdapter;
@@ -53,5 +53,19 @@ public class GridLayoutAdapter implements IDrawableContainerParent,IValuablePare
     @Override
     public int getNumberOfValuableChildren() {
         return imageButtonAdapterList.size();
+    }
+
+    @Override
+    public int getColumnCount() {
+        return this.gridLayout.getColumnCount();
+    }
+
+    @Override
+    public int getRowCount() {
+        return this.gridLayout.getRowCount();
+    }
+
+    public ImageButtonAdapter getImageButtonAdapter(int i){
+        return imageButtonAdapterList.get(i);
     }
 }

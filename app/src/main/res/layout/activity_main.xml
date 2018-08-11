@@ -15,308 +15,531 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="9"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton49"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton52"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton53"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton54"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton55"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton56"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton57"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton58"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton63"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celda"
+                android:onClick="presionado"
+                android:padding="0dp" />
+
+        </GridLayout>
+    </FrameLayout>
+
     <GridLayout
-        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="6"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-
-        <ImageButton
-            android:id="@+id/imageButton16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton26"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton27"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-
-        <ImageButton
-            android:id="@+id/imageButton28"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton29"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton33"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton34"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-
-        <ImageButton
-            android:id="@+id/imageButton36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="presionado"
-            android:padding="0dp"
-            app:srcCompat="@drawable/celda" />
-    </GridLayout>
-
-    <GridLayout
-        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
@@ -326,9 +549,9 @@
         <ImageButton
             android:id="@+id/imageButtonUno"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:onClick="numeroPresionado"
-            app:srcCompat="@drawable/vector_uno" />
+            android:background="@drawable/vector_uno" />
 
         <ImageButton
             android:id="@+id/imageButtonDos"
@@ -337,7 +560,35 @@
             android:layout_column="1"
             android:layout_row="0"
             android:onClick="numeroPresionado"
-            app:srcCompat="@drawable/vector_dos" />
+            android:background="@drawable/vector_dos" />
+
+        <ImageButton
+            android:id="@+id/imageButtonTres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:onClick="numeroPresionado"
+            android:background="@drawable/vector_tres" />
+
+        <ImageButton
+            android:id="@+id/imageButtonCuatro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:onClick="numeroPresionado"
+            android:background="@drawable/vector_cuatro" />
+
+        <ImageButton
+            android:id="@+id/imageButtonVacio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="0"
+            android:onClick="numeroPresionado"
+            android:background="@drawable/vector_vacio" />
     </GridLayout>
+
 
 </android.support.constraint.ConstraintLayout>

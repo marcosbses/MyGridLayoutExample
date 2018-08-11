@@ -9,7 +9,7 @@ public class MatrizContainer {
 
     public static synchronized int[][] getMatriz(){
         if(matriz==null){
-            matriz=new int[3][3];
+            matriz=new int[9][9];
         }
         return matriz;
     }

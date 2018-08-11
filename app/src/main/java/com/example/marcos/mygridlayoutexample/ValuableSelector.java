@@ -8,16 +8,18 @@ import java.util.List;
 /**
  * Created by marcos on 2/10/18.
  */
-
+//alias: GridLayout value setter
 public class ValuableSelector implements IValuable,ISelectable {
     private List<? extends IValuable> valuables;
     private IValuable valuable;
     private int position;
+    private IValuableStack valuableStack;
     private ValueChangeEvaluator valueChangeEvaluator;
     private static ValuableSelector valuableSelector;
     private ValuableSelector(List<? extends IValuable> valuables,ValueChangeEvaluator valueChangeEvaluator){
         this.valuables=valuables;
         this.valueChangeEvaluator=valueChangeEvaluator;
+        this.valuableStack=HistoricValuableStack.getInstance();
         valuable=null;
     }
 
@@ -34,6 +36,7 @@ public class ValuableSelector implements IValuable,ISelectable {
     @Override
     public void setValues(int value) {
         valuable.setValues(value);
+        valuableStack.addValuable(valuable);
     }
 
     @Override
