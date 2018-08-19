@@ -10,10 +10,22 @@ import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
 public class MainActivity extends AppCompatActivity {
 
     PressCommand pressCommand;
     ValueChangeEvaluator valueChangeEvaluator;
+    private SudokuGame sudokuGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +64,25 @@ public class MainActivity extends AppCompatActivity {
         pressCommand=new PressCommand(celdasDibujadas,gridLayout);
         valueChangeEvaluator=ValueChangeEvaluator.getInstance();
 
+        loadSudokuGame();
+    }
+
+    private void loadSudokuGame(){
+
+        SudokuGame sudokuGame=new SudokuGame("sudokuGameJSON");
+        this.sudokuGame=sudokuGame;
+        IValuableParent valuableParent=GridLayoutAdapter.getInstance();
+
+        Log.i("infor","sudoku game number: "+sudokuGame.getNumber());
+        Map<String,Integer> valoresIngresados=sudokuGame.getValoresIngresados();
+        Set<String> claves=valoresIngresados.keySet();
+        Iterator<String> iterator=claves.iterator();
+        while (iterator.hasNext()){
+            String clave=iterator.next();
+            int valor=valoresIngresados.get(clave);
+            valuableParent.getValuableChildAt(Integer.parseInt(clave)).setValues(valor);
+        }
+        Log.i("infor","valor ingresado en 0: "+valoresIngresados.get("0"));
     }
 
     public void presionado(View v){
@@ -105,5 +136,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    protected void onPause(){
+        super.onPause();
+        sudokuGame.addValorIngresado("0",3);
+        sudokuGame.saveState();
     }
 }

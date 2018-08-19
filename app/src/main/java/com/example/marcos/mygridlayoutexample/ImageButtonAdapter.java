@@ -40,6 +40,8 @@ public class ImageButtonAdapter implements IDrawableContainer,IValuable,ISquare 
 
 
         popUpView.setVisibility(View.INVISIBLE);
+        //set default fondo
+        setImageDrawabe(context.getDrawable(R.drawable.celda));
 
     }
 
