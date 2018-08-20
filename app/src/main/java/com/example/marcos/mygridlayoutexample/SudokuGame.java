@@ -1,6 +1,7 @@
 package com.example.marcos.mygridlayoutexample;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,13 +11,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class SudokuGame {
+public class SudokuGame{
     private String JSONFileNAme;
     private int number;
     private Map<String,Integer> valoresIngresados;
+    private static SudokuGame sudokuGame;
 
-    public SudokuGame(String JSONFileNAme){
+    private SudokuGame(String JSONFileNAme){
         this.JSONFileNAme=JSONFileNAme;
+        GridLayoutValueSetter gridLayoutValueSetter=GridLayoutValueSetter.getInstance();
 
         String JSONString=SingleContextContainer.getContext().getSharedPreferences("sudokuGame",0).getString(JSONFileNAme,"{\"number\":0,\"valoresIngresados\":{}}");
             try {
@@ -28,6 +31,9 @@ public class SudokuGame {
                 while(claves.hasNext()){
                     String clave=claves.next();
                     valoresIngresados.put(clave,JsonVI.getInt(clave));
+
+                    gridLayoutValueSetter.select(Integer.parseInt(clave));
+                    gridLayoutValueSetter.setValues(JsonVI.getInt(clave));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -38,6 +44,13 @@ public class SudokuGame {
 
     }
 
+    public static synchronized SudokuGame getInstance(){
+        if(sudokuGame==null){
+            sudokuGame=new SudokuGame("sudokuGameJSON");
+        }
+        return sudokuGame;
+    }
+
     public int getNumber(){
         return this.number;
     }
@@ -46,6 +59,7 @@ public class SudokuGame {
     }
 
     public void addValorIngresado(String pos,Integer valor){
+        Log.i("infor","add valor ingresado");
         valoresIngresados.put(pos,valor);
     }
 

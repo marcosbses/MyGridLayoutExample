@@ -59,17 +59,18 @@ public class MainActivity extends AppCompatActivity {
 
         //myDibujadorCeldas.dibujarCruz(2,2);
 
+        this.sudokuGame=SudokuGame.getInstance();
         CeldasDibujadas celdasDibujadas=new CeldasDibujadas(myDibujadorCeldas,myDibujadorCeldas2);
 
         pressCommand=new PressCommand(celdasDibujadas,gridLayout);
         valueChangeEvaluator=ValueChangeEvaluator.getInstance();
 
-        loadSudokuGame();
+        //loadSudokuGame();
     }
 
     private void loadSudokuGame(){
 
-        SudokuGame sudokuGame=new SudokuGame("sudokuGameJSON");
+        SudokuGame sudokuGame=SudokuGame.getInstance();
         this.sudokuGame=sudokuGame;
         IValuableParent valuableParent=GridLayoutAdapter.getInstance();
 
@@ -140,7 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onPause(){
         super.onPause();
-        sudokuGame.addValorIngresado("0",3);
         sudokuGame.saveState();
     }
 }

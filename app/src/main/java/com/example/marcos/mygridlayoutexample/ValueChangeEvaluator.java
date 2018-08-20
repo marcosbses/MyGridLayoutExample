@@ -48,8 +48,35 @@ public class ValueChangeEvaluator implements ISelectable {
             }
         }
 
-        return true;
+        if(horizontalEvaluation(value)&&verticalEvaluation(value)){
+            return true;
+        }else {
+            return false;
+        }
 
+
+    }
+
+    private boolean horizontalEvaluation(int value){
+        int ni=(int)position/(3*3);
+
+        for(int i=0;i<(3*3);i++){
+            if(valuableParent.getValuableChildAt(ni*(3*3)+i).getValue()==value){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean verticalEvaluation(int value){
+        int j=position%(3*3);
+
+        for(int i=0;i<(3*3);i++){
+            if(valuableParent.getValuableChildAt(i*(3*3)+j).getValue()==value){
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override

@@ -10,50 +10,44 @@ import java.util.List;
  */
 //alias: GridLayout value setter
 public class ValuableSelector implements IValuable,ISelectable {
-    private List<? extends IValuable> valuables;
-    private IValuable valuable;
-    private int position;
-    private IValuableStack valuableStack;
-    private ValueChangeEvaluator valueChangeEvaluator;
+
+    private GridLayoutValueSetter gridLayoutValueSetter;
     private static ValuableSelector valuableSelector;
-    private ValuableSelector(List<? extends IValuable> valuables,ValueChangeEvaluator valueChangeEvaluator){
-        this.valuables=valuables;
-        this.valueChangeEvaluator=valueChangeEvaluator;
-        this.valuableStack=HistoricValuableStack.getInstance();
-        valuable=null;
+    private SudokuGame sudokuGame;
+
+    private ValuableSelector(){
+        this.gridLayoutValueSetter=GridLayoutValueSetter.getInstance();
+        this.sudokuGame=SudokuGame.getInstance();
     }
 
     public static synchronized ValuableSelector getInstance(){
         if(valuableSelector==null){
-            Log.i("infor","valuableSelector nulo-> instanciando");
-            GridLayoutAdapter gridLayoutAdapter=GridLayoutAdapter.getInstance();
-            List<? extends IValuable> imageButtons= gridLayoutAdapter.getImageButtonAdapterList();
-            valuableSelector=new ValuableSelector(imageButtons,ValueChangeEvaluator.getInstance());
+            valuableSelector=new ValuableSelector();
         }
         return valuableSelector;
     }
 
     @Override
     public void setValues(int value) {
-        valuable.setValues(value);
-        valuableStack.addValuable(valuable);
+        gridLayoutValueSetter.setValues(value);
+        if(value!=-1){
+            sudokuGame.addValorIngresado(String.valueOf(gridLayoutValueSetter.getSelectedPosition()),gridLayoutValueSetter.getValue());
+        }
     }
 
     @Override
     public int getValue() {
-        return valuables.get(position).getValue();
+        return gridLayoutValueSetter.getValue();
     }
 
     @Override
     public void select(int position) {
         Log.i("infor","position selected:"+position);
-        valueChangeEvaluator.select(position);
-        valuable=valuables.get(position);
-        this.position=position;
+        gridLayoutValueSetter.select(position);
     }
 
     @Override
     public int getSelectedPosition() {
-        return position;
+        return gridLayoutValueSetter.getSelectedPosition();
     }
 }
