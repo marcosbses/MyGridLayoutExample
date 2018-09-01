@@ -1,16 +1,6 @@
 package com.example.marcos.mygridlayoutexample;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.ContentProvider;
-import android.content.Context;
-import android.util.Log;
-import android.view.View;
-import android.widget.GridLayout;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
-import java.util.Arrays;
 
 /**
  * Created by marcos on 2/6/18.
@@ -19,7 +9,6 @@ import java.util.Arrays;
 public class CeldasDibujadas {
     private MyDibujadorCeldas dibujadorCeldas;
     private MyDibujadorCeldas dibujadorCeldas2;
-    private int[][] matriz;
     private ISelectable selectable;
     private GridLayoutAdapter gridLayoutAdapter;
     private ImageButtonAdapter lastCentralImageButtonAdapter;
@@ -29,8 +18,6 @@ public class CeldasDibujadas {
     public CeldasDibujadas(MyDibujadorCeldas dibujadorCeldas,MyDibujadorCeldas dibujadorCeldas2){
         this.dibujadorCeldas=dibujadorCeldas;
         this.dibujadorCeldas2=dibujadorCeldas2;
-        matriz=MatrizContainer.getMatriz();//matriz 3x3
-        GridLayoutAdapter gridLayoutAdapter=GridLayoutAdapter.getInstance();
         selectable=ValuableSelector.getInstance();
         this.gridLayoutAdapter=GridLayoutAdapter.getInstance();
     }

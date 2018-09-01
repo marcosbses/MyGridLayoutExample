@@ -102,8 +102,6 @@ public class ImageButtonAdapter implements IDrawableContainer,IValuable,ISquare 
                     Log.i("infor","ld is null");
                     Drawable[] drawables={fondoDrawable,valueDrawable};
 
-                    Activity activity=(Activity)SingleContextContainer.getContext();
-
                     imageButton.setBackground(new LayerDrawable(drawables));
 
 

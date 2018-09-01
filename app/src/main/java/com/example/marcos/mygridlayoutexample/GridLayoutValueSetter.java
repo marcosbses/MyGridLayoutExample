@@ -13,7 +13,7 @@ public class GridLayoutValueSetter implements ISelectable,IValuable {
     private List<? extends IValuable> valuables;
     private IValuable valuable;
     private int position;
-    private IValuableStack valuableStack;
+    private IPositionedValuableStack valuableStack;
     private ValueChangeEvaluator valueChangeEvaluator;
     private static GridLayoutValueSetter gridLayoutValueSetter;
 
@@ -39,7 +39,10 @@ public class GridLayoutValueSetter implements ISelectable,IValuable {
         valuable.setValues(value);
 
         if(value!=-1){
-            valuableStack.addValuable(valuable);
+
+            valuableStack.addValuable(new PositionedValuable(valuable,position));
+        }else{
+            valuableStack.remove();
         }
     }
 

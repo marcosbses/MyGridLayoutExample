@@ -65,26 +65,10 @@ public class MainActivity extends AppCompatActivity {
         pressCommand=new PressCommand(celdasDibujadas,gridLayout);
         valueChangeEvaluator=ValueChangeEvaluator.getInstance();
 
-        //loadSudokuGame();
+
     }
 
-    private void loadSudokuGame(){
 
-        SudokuGame sudokuGame=SudokuGame.getInstance();
-        this.sudokuGame=sudokuGame;
-        IValuableParent valuableParent=GridLayoutAdapter.getInstance();
-
-        Log.i("infor","sudoku game number: "+sudokuGame.getNumber());
-        Map<String,Integer> valoresIngresados=sudokuGame.getValoresIngresados();
-        Set<String> claves=valoresIngresados.keySet();
-        Iterator<String> iterator=claves.iterator();
-        while (iterator.hasNext()){
-            String clave=iterator.next();
-            int valor=valoresIngresados.get(clave);
-            valuableParent.getValuableChildAt(Integer.parseInt(clave)).setValues(valor);
-        }
-        Log.i("infor","valor ingresado en 0: "+valoresIngresados.get("0"));
-    }
 
     public void presionado(View v){
         pressCommand.execute(v);
@@ -129,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(v.getId()==R.id.imageButtonVacio){
             Log.i("infor","imageButtonVacio pressed");
-            IValuableStack valuableStack=HistoricValuableStack.getInstance();
+            IPositionedValuableStack valuableStack=HistoricValuableStack.getInstance();
             IValuable valuable2=valuableStack.remove();
             if(valuable2!=null){
                 valuable2.setValues(-1);

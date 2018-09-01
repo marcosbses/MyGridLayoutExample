@@ -3,8 +3,8 @@ package com.example.marcos.mygridlayoutexample;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HistoricValuableStack implements IValuableStack{
-    private List<IValuable> valuables;
+public class HistoricValuableStack implements IPositionedValuableStack{
+    private List<PositionedValuable> valuables;
     private static HistoricValuableStack historicValuableStack;
     private HistoricValuableStack(){
         this.valuables=new ArrayList<>();
@@ -18,14 +18,15 @@ public class HistoricValuableStack implements IValuableStack{
     }
 
     @Override
-    public void addValuable(IValuable valuable) {
+    public void addValuable(PositionedValuable valuable) {
         this.valuables.add(valuable);
     }
 
     @Override
-    public IValuable remove() {
+    public PositionedValuable remove() {
         int size=valuables.size();
         if(size>0) {
+
             return valuables.remove(valuables.size() - 1);
         }else {
             return null;

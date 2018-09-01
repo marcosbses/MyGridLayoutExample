@@ -30,9 +30,6 @@ public class ValuableSelector implements IValuable,ISelectable {
     @Override
     public void setValues(int value) {
         gridLayoutValueSetter.setValues(value);
-        if(value!=-1){
-            sudokuGame.addValorIngresado(String.valueOf(gridLayoutValueSetter.getSelectedPosition()),gridLayoutValueSetter.getValue());
-        }
     }
 
     @Override
@@ -50,4 +47,6 @@ public class ValuableSelector implements IValuable,ISelectable {
     public int getSelectedPosition() {
         return gridLayoutValueSetter.getSelectedPosition();
     }
+
+
 }
